@@ -53,9 +53,6 @@ filename = "https://raw.githubusercontent.com/jermwatt/machine_learning_refined/
 data = np.loadtxt(filename,delimiter=',')
 data[0,:] = (data[0,:]-2004)/10 # Normalização dos dados
 
-data
-
-#%%
 
 P = data[0].size
 A = np.array([np.ones(P),data[0,:]])
@@ -63,19 +60,20 @@ A = A.transpose()
 M = np.matmul(A.transpose(),A)
 b = np.matmul(A.transpose(),data[1,:])
 v = np.linalg.solve(M,b)
-w = np.array([3,2])
+w = np.array([3, 2])
 
 w = grad_desc(w,data[0,:],data[1,:],10,100)
 print('v=',v)
 print(g(v,data[0,:],data[1,:]))
 print('w=',w)
 
-# Returning data to its original form
+Returning data to its original form
 data[0,:] = 10*data[0,:]+2004
 w[1] = w[1] / 10
 w[0] = w[0] - 2004 * w[1]
 v[1] = v[1] / 10
 v[0] = v[0] - 2004 * v[1]
+
 
 print('vn=',[round(num, 2) for num in v])
 print('wn=',[round(num, 2) for num in w])
