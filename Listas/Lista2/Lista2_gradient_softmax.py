@@ -115,7 +115,8 @@ plt.scatter(x,y, c = colors)
 x = np.linspace(0,5,100)
 # x = np.linspace(X[0], X[-1], 100)
 for legend, result in results.items():
-    y = 2/(1+np.exp(-(result[0]+result[1]*x))) - 1
+    # y = 2/(1+np.exp(-(result[0]+result[1]*x))) - 1
+    y = np.tanh(result[0]+result[1]*x)
     plt.plot(x, y, label=legend, linewidth=2)
 plt.legend()
 plt.show()
