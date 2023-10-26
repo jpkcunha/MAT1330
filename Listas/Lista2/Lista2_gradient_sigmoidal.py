@@ -90,9 +90,13 @@ data = np.loadtxt(datapath + csvname,delimiter = ',')
 x = data[:-1,:]
 y = data[-1:,:]
 x,y = x[0], y[0]
+
+#%%
+
 X,Y = pontos_1d(x,y)
 print(np.shape(X))
 print(np.shape(Y))
+X
 
 
 #%%
