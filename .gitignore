@@ -2,3 +2,4 @@ __pycache__
 *.log
 Materiais/
 Seminario/video_adam.mp4
+.DS_Store
